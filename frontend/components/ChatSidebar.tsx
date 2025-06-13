@@ -86,7 +86,7 @@ export default function ChatSidebar() {
 
 function PureHeader() {
   return (
-    <SidebarHeader className="flex justify-between items-center gap-4 relative">
+    <SidebarHeader className="flex items-center gap-4 relative">
       <SidebarTrigger className="absolute right-1 top-2.5" />
       <h1 className="text-2xl font-bold">
         Chat<span className="">0</span>
@@ -95,7 +95,7 @@ function PureHeader() {
         to="/chat"
         className={buttonVariants({
           variant: 'default',
-          className: 'w-full',
+          className: 'bg-background text-foreground rounded-md px-3 py-1.5 text-sm font-medium hover:bg-accent hover:text-accent-foreground flex-shrink-0',
         })}
       >
         New Chat

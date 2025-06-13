@@ -53,7 +53,7 @@ function PureMessage({
           return message.role === 'user' ? (
             <div
               key={key}
-              className="relative group px-4 py-3 rounded-xl bg-secondary border border-secondary-foreground/2 max-w-[80%]"
+              className="relative group px-4 py-3 rounded-xl bg-secondary border border-secondary-foreground/2 max-w-[80%] mt-8 md:mt-16"
               ref={(el) => registerRef(message.id, el)}
             >
               {mode === 'edit' && (
