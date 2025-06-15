@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Chat0',
-  description: 'Fastest AI Chat App',
+  title: 'T3Lite',
+  description: 'T3Lite - Your AI-powered chat assistant',
 };
 
 export default function RootLayout({

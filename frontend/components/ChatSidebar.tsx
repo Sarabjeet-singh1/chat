@@ -89,7 +89,7 @@ function PureHeader() {
     <SidebarHeader className="flex items-center gap-4 relative">
       <SidebarTrigger className="absolute right-1 top-2.5" />
       <h1 className="text-2xl font-bold">
-        Chat<span className="">0</span>
+        T3Lite
       </h1>
       <Link
         to="/chat"
