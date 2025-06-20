@@ -29,19 +29,18 @@ export async function POST(req: NextRequest) {
         aiModel = openai(modelConfig.modelId);
         break;
 
+      case 'anthropic':
+        const anthropic = createOpenRouter({ apiKey });
+        aiModel = anthropic(modelConfig.modelId);
+        break;
+
       case 'openrouter':
         const openrouter = createOpenRouter({ apiKey });
         aiModel = openrouter(modelConfig.modelId);
         break;
 
       default:
-        return new Response(
-          JSON.stringify({ error: 'Unsupported model provider' }),
-          {
-            status: 400,
-            headers: { 'Content-Type': 'application/json' },
-          }
-        );
+        throw new Error(`Unsupported provider: ${modelConfig.provider}`);
     }
 
     const result = streamText({

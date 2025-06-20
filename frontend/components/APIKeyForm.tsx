@@ -23,6 +23,7 @@ const formSchema = z.object({
   }),
   openrouter: z.string().trim().optional(),
   openai: z.string().trim().optional(),
+  anthropic: z.string().trim().optional(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -102,6 +103,16 @@ const Form = () => {
         placeholder="sk-..."
         register={register}
         error={errors.openai}
+      />
+
+      <ApiKeyField
+        id="anthropic"
+        label="Anthropic API Key"
+        models={['Claude 3 Sonnet 100K', 'Claude 3 Haiku 100K']}
+        linkUrl="https://console.anthropic.com/dashboard"
+        placeholder="sk-..."
+        register={register}
+        error={errors.anthropic}
       />
 
       <Button type="submit" className="w-full" disabled={!isDirty}>

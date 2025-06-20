@@ -7,6 +7,8 @@ export const AI_MODELS = [
   'Gemini 2.5 Flash',
   'GPT-4o',
   'GPT-4.1-mini',
+  'Claude 3 Sonnet 100K',
+  'Claude 3 Haiku 100K',
 ] as const;
 
 export type AIModel = (typeof AI_MODELS)[number];
@@ -47,6 +49,16 @@ export const MODEL_CONFIGS = {
     modelId: 'gpt-4.1-mini',
     provider: 'openai',
     headerKey: 'X-OpenAI-API-Key',
+  },
+  'Claude 3 Sonnet 100K': {
+    modelId: 'claude-3-sonnet-20240229',
+    provider: 'anthropic',
+    headerKey: 'X-API-Key',
+  },
+  'Claude 3 Haiku 100K': {
+    modelId: 'claude-3-haiku-20240229',
+    provider: 'anthropic',
+    headerKey: 'X-API-Key',
   },
 } as const satisfies Record<AIModel, ModelConfig>;
 
